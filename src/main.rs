@@ -125,7 +125,7 @@ fn main() {
                 }
             }
             Element::Unrecognized => {
-                println!("please insert ONE valid element to find, choosing from: \r 'l' or 'line \r 's' or 'slope' \r 'X' or 'x' \r 'Y' or 'y' \r 'i' or 'intercept' ")
+                println!("please insert ONE valid element to find, choosing from: \n 'l' or 'line \n 's' or 'slope' \n 'X' or 'x' \n 'Y' or 'y' \n 'i' or 'intercept' ")
             }
         }
     }
