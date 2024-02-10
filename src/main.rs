@@ -9,25 +9,25 @@ struct Cli {
     #[arg(short = 'f', long = "find")]
     element: Element,
 
-    #[arg(long)]
+    #[arg(long, allow_hyphen_values = true)]
     x1: Option<f64>,
-    #[arg(long)]
+    #[arg(long, allow_hyphen_values = true)]
     y1: Option<f64>,
 
-    #[arg(long)]
+    #[arg(long, allow_hyphen_values = true)]
     x2: Option<f64>,
-    #[arg(long)]
+    #[arg(long, allow_hyphen_values = true)]
     y2: Option<f64>,
 
-    #[arg(long)]
+    #[arg(short = 'x', allow_hyphen_values = true)]
     x: Option<f64>,
-    #[arg(long)]
+    #[arg(short = 'y', allow_hyphen_values = true)]
     y: Option<f64>,
 
-    #[arg(short, long)]
+    #[arg(short, long, allow_hyphen_values = true)]
     slope: Option<f64>,
 
-    #[arg(short, long)]
+    #[arg(short, long, allow_hyphen_values = true)]
     intercept: Option<f64>,
 }
 
@@ -61,7 +61,7 @@ impl From<String> for Element {
 
 fn main() {
     let cli = Cli::parse();
-
+    println!("{:?}", cli);
     match cli.element {
         Element::Line => {
             if cli.x1.is_some() && cli.y1.is_some() && cli.x2.is_some() && cli.y2.is_some() {
